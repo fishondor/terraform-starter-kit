@@ -1,0 +1,4 @@
+main.tf
+.bin
+*.json
+terraform-install.sh

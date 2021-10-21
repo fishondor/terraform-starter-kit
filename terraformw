@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Set CUSTOM_BIN_PATH
+if [ -z "$1" ]
+then
+    CUSTOM_BIN_PATH=$(pwd)/.bin
+else
+    CUSTOM_BIN_PATH=$1
+fi
+
+# Set desired Terraform version
+TERRAFORM_VERSION=1.0.8
+
+# based on https://tfswitch.warrensbox.com/Continuous-Integration/
+
+echo "Installing tfswitch to $CUSTOM_BIN_PATH"
+
+# Get the installer on to your machine
+curl https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh --output terraform-install.sh
+
+# Make installer executable
+chmod 755 terraform-install.sh
+
+# Install tfswitch in a location you have permission
+./terraform-install.sh -b $CUSTOM_BIN_PATH
+
+# Install Terraform to CUSTOMBIN folder
+$CUSTOM_BIN_PATH/tfswitch -b $CUSTOM_BIN_PATH/terraform $TERRAFORM_VERSION
+
+echo ""
+echo -e "\033[32mTerraform version \033[1m$TERRAFORM_VERSION\033[0m \033[32mwas installed to \033[1m$CUSTOM_BIN_PATH/terraform\033[0m"
