@@ -3,3 +3,4 @@ main.tf
 *.json
 terraform-install.sh
 *.lock.hcl
+.terraform
