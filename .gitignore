@@ -1,6 +1,26 @@
-main.tf
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Ignore any service-account file in case it was placed in the project folder
+*service-account.json
+*ws-web*.json
+
+# Ignore tfplan
+tfplan
+
+# Ignore terraform installation files
 .bin
-*.json
 terraform-install.sh
-*.lock.hcl
-.terraform
+
+.idea
+
+# Project generated files
+*.tf
+!*.tf.example
+.terraform*
+*tfplan*
+
+# Service accounts keys
+keys/*
+!keys/.gitkeep
