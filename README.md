@@ -22,3 +22,11 @@
 
 ### Managing resources
 * https://learn.hashicorp.com/tutorials/terraform/google-cloud-platform-build?in=terraform/gcp-get-started
+* Rename or copy main.tf.example to main.tf
+* Update service key path and project ID
+* ```terraform -help```
+* ```terraform init```
+* ```terraform plan```
+* ```terraform apply```
+* ```terraform plan -destroy```
+* ```terraform destroy```
